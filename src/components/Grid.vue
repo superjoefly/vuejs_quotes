@@ -66,7 +66,7 @@
 
   .w3-panel:hover {
     cursor: pointer;
-    border-bottom: 1px solid red;
+    color: #ece1e1 !important;
   }
 
   .close-button {

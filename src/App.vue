@@ -26,7 +26,6 @@
     @quoteDeleted="removeQuote"
     ></app-grid>
 
-
   </div>
 </template>
 
@@ -41,7 +40,7 @@
         quotes: [
           'This is a quote!'
         ],
-        maxQuotes: 10
+        maxQuotes: 12
       }
     },
 

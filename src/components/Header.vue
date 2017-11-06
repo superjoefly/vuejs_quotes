@@ -1,7 +1,7 @@
 <template>
   <div class="w3-container w3-center">
     <h1>Quotes App</h1>
-    <p>This App primarily demonstrates component communication in Vue.js</p>
+    <p>Demonstration of Component Communication</p>
 
     <div class="w3-light-grey w3-round-large progress">
       <div
