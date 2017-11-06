@@ -68,12 +68,11 @@
 
   .w3-panel:hover {
     cursor: pointer;
-    color: maroon !important;
-    background-color: #ffe1dd !important;
   }
 
   .close-button {
     position: absolute;
     right: 5px;
+    color: red;
   }
 </style>
