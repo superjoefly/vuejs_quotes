@@ -3,7 +3,7 @@
     <h3>Add a Quote!</h3>
 
     <!-- Use v-model to bind the data property to the textarea field -->
-      <textarea class="w3-pale-yellow w3-round" placeholder="Enter up to 10 Quotes!" style="width: 50%" rows="3" v-model="newQuote" @keyup.enter="addQuote"/>
+      <textarea class="w3-pale-yellow w3-round" placeholder="Enter up to 10 Quotes!" style="width: 100%" rows="3" v-model="newQuote" @keyup.enter="addQuote"/>
 
 
 
@@ -39,5 +39,11 @@
 <style>
 textarea {
   background: url("http://i.stack.imgur.com/ynxjD.png") repeat-y;
+}
+
+@media all and (min-width: 800px) {
+  textarea {
+    width: 50% !important;
+  }
 }
 </style>

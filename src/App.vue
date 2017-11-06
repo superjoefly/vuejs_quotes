@@ -1,5 +1,5 @@
 <template>
-  <div class="w3-container w3-pale-blue">
+  <div class="w3-container">
 
     <!-- Render Header Component -->
 

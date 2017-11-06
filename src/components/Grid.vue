@@ -4,11 +4,17 @@
 
     <!-- Render Quotes -->
     <!-- Loop through quotes and ouput in slot -->
+
     <app-quote
       v-for="(quote, index) in quotes"
       @click.native="deleteQuote(index)"
       key="quoteId"
-      >{{ quote }}
+      >
+      <div class="w3-panel w3-cyan w3-round" @mouseenter="showCloseButton = true"
+      @mouseleave="showCloseButton = false">
+        {{ quote }}
+        <span class="close-button" v-if="showCloseButton">&times;</span>
+      </div>
     </app-quote>
 
   </div>
@@ -19,6 +25,12 @@
   export default {
     // Accept 'quotes' as prop
     props: ['quotes'],
+
+    data() {
+      return {
+        showCloseButton: false
+      }
+    },
 
     methods: {
       deleteQuote(index) {
@@ -31,3 +43,37 @@
     }
   }
 </script>
+
+
+<style scoped>
+  .w3-panel {
+      font-family: 'Love Ya Like A Sister', cursive;
+      font-size: 24px;
+      color: white !important;
+      word-wrap: break-word;
+      position: relative;
+  }
+
+  .w3-panel:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50px;
+    border-width: 20px 20px 0 0;
+    border-style: solid;
+    border-color: #00bcd4 transparent;
+    display: block;
+    width: 0;
+  }
+
+  .w3-panel:hover {
+    cursor: pointer;
+    color: maroon !important;
+    background-color: #ffe1dd !important;
+  }
+
+  .close-button {
+    position: absolute;
+    right: 5px;
+  }
+</style>
