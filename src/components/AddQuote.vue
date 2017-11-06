@@ -2,8 +2,10 @@
   <div class="w3-border-bottom w3-center">
     <h3>Add a Quote!</h3>
 
+    <p class="w3-text-red">{{message}}</p>
+
     <!-- Use v-model to bind the data property to the textarea field -->
-      <textarea class="w3-pale-yellow w3-round" placeholder="Enter up to 10 Quotes!" style="width: 100%" rows="3" v-model="newQuote" @keyup.enter="addQuote"/>
+      <textarea class="w3-pale-yellow w3-round" placeholder="Enter up to 10 Quotes!" style="width: 100%" rows="3" v-model="newQuote" @keyup.enter="addQuote" @focus="message = ''"/>
 
 
 
@@ -20,17 +22,19 @@
   export default {
     data() {
       return {
-        newQuote: ''
+        newQuote: '',
+        message: ''
       }
     },
 
     methods: {
       addQuote() {
-        // create custom event and pass the 'newQuote data'
-        this.$emit('quoteAdded', this.newQuote);
-
-        // reset the textarea field
-        this.newQuote = '';
+        if (this.newQuote !== '') {
+          this.$emit('quoteAdded', this.newQuote);
+          this.newQuote = '';
+        } else {
+          this.message = 'Enter some text to add a quote!';
+        }
       }
     }
   }

@@ -10,10 +10,8 @@
       @click.native="deleteQuote(index)"
       key="quoteId"
       >
-      <div class="w3-panel w3-cyan w3-round" @mouseenter="showCloseButton = true"
-      @mouseleave="showCloseButton = false">
+      <div class="w3-panel w3-cyan w3-round">
         {{ quote }}
-        <span class="close-button" v-if="showCloseButton">&times;</span>
       </div>
     </app-quote>
 
@@ -68,6 +66,7 @@
 
   .w3-panel:hover {
     cursor: pointer;
+    border-bottom: 1px solid red;
   }
 
   .close-button {
